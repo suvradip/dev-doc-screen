@@ -59,8 +59,12 @@ RESOURCE.getLinks = function () {
   }
 };
 
-RESOURCE.parseLinks = function() {    
+RESOURCE.parseLinks = function() {
+  console.log(RESOURCE.links.length); 
+  if(RESOURCE.links.length > 0)     
     openPage(RESOURCE.links.shift(),  RESOURCE.screenShots);
+  else
+    phantom.exit();
 };
 
 RESOURCE.removeElements = function () {
